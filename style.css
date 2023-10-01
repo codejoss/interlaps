@@ -66,14 +66,20 @@ body {
 }
 
 .boton {
+    background-color: var(--main-bg-color);
+    border: solid 2px #fff;
+    border-radius: 50px;
     width: 6rem;
-    height: 3rem;
-    color: #323232;
-    font-size: 1.5rem;
+    height: 6rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    border-radius: 0.5rem;
     margin-top: 2rem;
-    /* filter:invert(); */
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #fff;
+    color: var(--main-bg-color);
 }
 
 .new-lap {
@@ -81,40 +87,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.5rem;
 }
 
-.resistencia {
+.resistance-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
     gap: 2rem;
-    margin-top: 5rem;
 }
 
-.resistencia p {
+.resistance-container p {
     padding-top: 0;
 }
 
-.resistencia input {
-    width: 8rem;
-    height: 4rem;
-    border-radius: 1rem;
-    margin: 0;
-    padding: 0;
+.resistance-container input {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 0.7rem;
     color: var(--main-bg-color);
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-indent: 1.5rem;
 }
 
 .checklap {
-    width: 9rem;
+    width: 8rem;
+    height: 3.5rem;
 }
 
 .timelapse {
-    justify-self: center;
-    padding-top: 3rem;
+    width: 500px;
+    height: 300px;
     margin: 0 auto;
+    overflow: auto;
+    border: #eeeeee solid 0.25rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.timelapse::-webkit-scrollbar {
+    display: none;
 }
 
 .subtitle {
@@ -123,20 +138,11 @@ body {
     padding-top: 2.5rem;
 }
 
-.laps-container {
-    display: flex;
-    flex-direction: column;
-    border: #eeeeee solid 0.25rem;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-    /* gap: 1rem; */
-}
-
 .lap-item {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1rem;;
+    padding: 0.5rem;
 }
 
 .laps-container p {

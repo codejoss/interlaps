@@ -1,24 +1,29 @@
-window.onload = init;
+document.querySelector(".start").addEventListener("click",cronometrar);
+document.querySelector(".pause").addEventListener("click",pause);
+document.querySelector(".reiniciar").addEventListener("click",reiniciar);
+document.querySelector(".checklap").addEventListener("click",recordLap);
+
+const listLaps = document.querySelector(".timelapse")
+const lapsContainer = document.querySelector(".laps-container")
+
+
+document.getElementById("hms").innerHTML="00:00:00";
+
+
 
 let hAux, mAux, sAux;
 let h = 0;
 let m = 0;
 let s = 0;
 let id;
-let laps = [];
+let lapsData = [];
 let index = 0;
 
 function init(){
-  document.querySelector(".start").addEventListener("click",cronometrar);
-  document.querySelector(".pause").addEventListener("click",pause);
-  document.querySelector(".reiniciar").addEventListener("click",reiniciar);
-  document.querySelector(".checklap").addEventListener("click",recordLap);
-
-  document.getElementById("hms").innerHTML="00:00:00";
 }         
 function cronometrar(){
   escribir();
-  id = setInterval(escribir,1000);
+  id = setInterval(escribir,100);
   document.querySelector(".start").removeEventListener("click",cronometrar);
 }
 
@@ -48,45 +53,40 @@ function pauseInterval() {
 function reiniciar(){
   clearInterval(id);
   document.getElementById("hms").innerHTML="00:00:00";
-  h=0;m=0;s=0;
+  h=0;
+  m=0;
+  s=0;
   document.querySelector(".start").addEventListener("click",cronometrar);
   document.getElementById("resistencia-value").value = 1
   clearListLaps();
+  lapsData = [];
 }
 
-
-// function recordLap() {
-//   laps.push(`${hAux}:${mAux}:${sAux}`)
-//   printLaps();
-// }
-
 function recordLap() {
-  laps.push({
+  resistance = 
+  lapsData.push({
     resistance: document.getElementById("resistencia-value").value,
-    time: `${hAux}:${mAux}:${sAux}`
+    time: `${hAux}:${mAux}:00`
   })
-  viewValueTime()
+  printLaps()
 };
 
 function printLaps() {
-  laps.maps(elem => {
+  let resistance = document.querySelector("#resistencia-value");
+  const lapItem = document.createElement("div");
+  const numLap = document.createElement("p");
+  const timeStamp = document.createElement("p");
 
-  })
+  lapItem.setAttribute("class", "lap-item");
+  numLap.setAttribute("class", "lap-text");
+  timeStamp.setAttribute("class", "lap-time");
+
+  timeStamp.innerHTML = `R: ${resistance.value} - ${hAux}:${mAux}:00`;
+
+  lapItem.append(numLap, timeStamp);
+  lapsContainer.appendChild(lapItem);
 }
 
 function clearListLaps() {
-  let example = `<div class="lap-item">
-  <p class="lap-text">Lap ejemplo 1:</p>
-  <p class="lap-time">00:10:15</p>
-</div>
-<div class="lap-item">
-  <p class="lap-text">Lap ejemplo 2:</p>
-  <p class="lap-time">00:10:17</p>
-</div>`
-
-  document.querySelector(".laps-container").innerHTML = example
-}
-
-function viewValueTime (){
-  console.log(laps)
+    document.querySelector(".laps-container").innerHTML = ""
 }
