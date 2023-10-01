@@ -7,14 +7,47 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="main.js"></script>
 </head>
+
 <body>
-  <div class="cronometro">
-    <div id="hms"></div>
-    <div class="contenedor-botones">
-      <div class="boton start"></div>
-      <div class="boton stop"></div>
-      <div class="boton reiniciar"></div>
+  
+  <section class="app">
+    <h1 class="title">Chronos Lap</h1>
+    
+    <div class="time-container">
+      <div class="cronometro">
+        <div id="hms"></div>
+        <div class="contenedor-botones">
+          <button class="boton start">Start</button>
+          <button class="boton pause">Pause</button>
+          <button class="boton reiniciar">Reset</button>
+        </div>
+
+          <div class="new-lap">
+
+            <div class="resistencia">
+              <p class="subtitle">Resistencia:</p>
+              <input id="resistencia-value" type="number" value="1">
+            </div>
+            <button class="checklap boton">New Lap</button>
+          </div>
+
+      </div>
     </div>
-  </div>
+
+    <div class="timelapse">
+      <h2 class="subtitle">Laps</h2>
+      <div class="laps-container">
+        <div class="lap-item">
+          <p class="lap-text">Lap ejemplo 1:</p>
+          <p class="lap-time">00:10:15</p>
+        </div>
+        <div class="lap-item">
+          <p class="lap-text">Lap ejemplo 2:</p>
+          <p class="lap-time">00:10:17</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
