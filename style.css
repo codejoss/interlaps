@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: alarm;
+    src: url(./assets/fonts/alarm.ttf);
+}
+
+.cronometro {
+    width: 200px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -100px;
+    text-align: center;
+}
+.contenedor-botones {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.boton {
+    width: 32px;
+    height: 32px;
+}
+
+.boton:hover {
+    color: red;
+}
+
+#hms {
+    height: 68px;
+    padding: 5px 0;
+    font-size: 50px;
+    color: #000;
+    font-family: alarm;
+}
+
+.start {
+    background: url(./assets/icons/start.png) 0 0 no-repeat;
+}
+
+.stop {
+    background: url(./assets/icons/pause.png) 0 0 no-repeat;
+}
+
+.reiniciar {
+    background: url(./assets/icons/delete.png)0 0 no-repeat;
+}
