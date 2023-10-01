@@ -37,13 +37,13 @@ body {
     font-weight: bold;
     font-size: 3rem;
     text-transform: uppercase;
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 
 .time-container {
     display: flex;
     justify-content: center;
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 .cronometro {
@@ -61,7 +61,7 @@ body {
 .contenedor-botones {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     gap: 1.5rem;
 }
 
@@ -82,7 +82,7 @@ body {
     color: var(--main-bg-color);
 }
 
-.new-lap {
+.new-lap-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,25 +111,23 @@ body {
     text-indent: 1.5rem;
 }
 
-.checklap {
-    width: 8rem;
-    height: 3.5rem;
-}
-
 .timelapse {
     width: 500px;
     height: 300px;
     margin: 0 auto;
     overflow: auto;
-    border: #eeeeee solid 0.25rem;
-    border-radius: 1rem;
     padding: 1rem;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
 .timelapse::-webkit-scrollbar {
     display: none;
+}
+
+.checklap {
+    width: 8rem;
+    height: 3.5rem;
 }
 
 .subtitle {
@@ -153,4 +151,8 @@ body {
 .lap-text {
     font-weight: 800;
     color: var(--special-text-color);
+}
+
+.hidden {
+    display: none;
 }

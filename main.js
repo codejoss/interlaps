@@ -5,6 +5,7 @@ document.querySelector(".checklap").addEventListener("click",recordLap);
 
 const listLaps = document.querySelector(".timelapse")
 const lapsContainer = document.querySelector(".laps-container")
+const timeLapse = document.querySelector(".timelapse")
 
 
 document.getElementById("hms").innerHTML="00:00:00";
@@ -18,12 +19,13 @@ let s = 0;
 let id;
 let lapsData = [];
 let index = 0;
+let lap = 1;
 
 function init(){
 }         
 function cronometrar(){
   escribir();
-  id = setInterval(escribir,100);
+  id = setInterval(escribir,1000);
   document.querySelector(".start").removeEventListener("click",cronometrar);
 }
 
@@ -60,11 +62,13 @@ function reiniciar(){
   document.getElementById("resistencia-value").value = 1
   clearListLaps();
   lapsData = [];
+  lap = 1
 }
 
 function recordLap() {
   resistance = 
   lapsData.push({
+    numInterval: lap,
     resistance: document.getElementById("resistencia-value").value,
     time: `${hAux}:${mAux}:00`
   })
@@ -74,19 +78,23 @@ function recordLap() {
 function printLaps() {
   let resistance = document.querySelector("#resistencia-value");
   const lapItem = document.createElement("div");
-  const numLap = document.createElement("p");
+  const interval = document.createElement("p");
   const timeStamp = document.createElement("p");
 
+
+  interval.innerHTML = `Lap: ${lap}`
+  timeStamp.innerHTML = `R: ${resistance.value} - ${hAux}:${mAux}:00`;
+  
   lapItem.setAttribute("class", "lap-item");
-  numLap.setAttribute("class", "lap-text");
+  interval.setAttribute("class", "lap-text");
   timeStamp.setAttribute("class", "lap-time");
 
-  timeStamp.innerHTML = `R: ${resistance.value} - ${hAux}:${mAux}:00`;
-
-  lapItem.append(numLap, timeStamp);
+  lapItem.append(interval, timeStamp);
   lapsContainer.appendChild(lapItem);
+
+  lap++;
 }
 
 function clearListLaps() {
-    document.querySelector(".laps-container").innerHTML = ""
+    lapsContainer.innerHTML = ""
 }
