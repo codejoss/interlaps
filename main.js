@@ -70,7 +70,7 @@ function recordLap() {
   lapsData.push({
     numInterval: lap,
     resistance: document.getElementById("resistencia-value").value,
-    time: `${hAux}:${mAux}:00`
+    time: `${hAux}:${mAux}:${sAux}`
   })
   printLaps()
 };
@@ -81,9 +81,8 @@ function printLaps() {
   const interval = document.createElement("p");
   const timeStamp = document.createElement("p");
 
-
   interval.innerHTML = `Lap: ${lap}`
-  timeStamp.innerHTML = `R: ${resistance.value} - ${hAux}:${mAux}:00`;
+  timeStamp.innerHTML = `R: ${resistance.value} - ${hAux}:${mAux}:${sAux}`;
   
   lapItem.setAttribute("class", "lap-item");
   interval.setAttribute("class", "lap-text");
