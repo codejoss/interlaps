@@ -12,4 +12,4 @@ Interlaps es un sencillo sistema que ayuda a registrar los datos de los diferent
 - Resistencia.
 - Registro del tiempo en que se aplica.
 
-🔗 Puedes probarlo aquí: <a href="https://codejoss.github.io/interlaps/" target="_blank">Interlaps</a>
+🔗 Puedes probarlo aquí: [INTERLAPS]("https://codejoss.github.io/interlaps/"){:target="_blank"}
