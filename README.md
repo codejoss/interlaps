@@ -11,5 +11,5 @@ Interlaps es un sencillo sistema que ayuda a registrar los datos de los diferent
 - Número de intervalo.
 - Resistencia.
 - Registro del tiempo en que se aplica.
-  
-🔗 Puedes probarlo aquí: [Interlaps](https://codejoss.github.io/interlaps/)
+
+🔗 Puedes probarlo aquí: <a href="https://codejoss.github.io/interlaps/" target="_blank">Interlaps</a>
